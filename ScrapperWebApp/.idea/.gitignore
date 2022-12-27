@@ -1,0 +1,10 @@
+# Default ignored files
+/shelf/
+
+# Jetbrains Specific Files
+/workspace.xml
+
+# Django
+db.sqlite3
+*.log
+local_settings.py
