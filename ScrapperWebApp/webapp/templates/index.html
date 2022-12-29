@@ -5,8 +5,9 @@
 
     <body>
         <h2>Steam-Market Web Scrapper</h2>
-        <form action="">
-            <input class="search" type="text" placeholder="Search Item...">
+        <form action="{% url 'results' %}" method="post">
+            {% csrf_token %}
+            <input type="text" placeholder="Search Item..." class="item_name">
             <button type="submit"><i class="fa fa-search"></i></button>
         </form>
     </body>

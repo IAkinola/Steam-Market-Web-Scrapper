@@ -1,0 +1,15 @@
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <body>
+        <h2>Steam-Market Web Scrapper</h2>
+        <p>Search results for {{ result }}</p>
+        <ul>
+            {% for key, value in resultDict.items %}
+                <li>{{ key }}: {{ value }}</li>
+            {% endfor %}
+            </ul>               
+    </body>
+</html>

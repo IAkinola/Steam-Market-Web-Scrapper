@@ -8,7 +8,8 @@ def searchfunction(item):
     searchUrl = f"https://steamcommunity.com/market/search/render/?query={item}&start=0" \
                 f"&count=10&search_descriptions=0&sort_column=default&sort_dir=desc&norender=1"
 
-    r = requests.get(searchUrl) # Get page
+    # Get page
+    r = requests.get(searchUrl) 
     return r
 
 
@@ -25,12 +26,13 @@ def makeJsonfile(pageContent):
 def formattedResult(item):
 
     resultDictionary = {}
+    
     # Get total number of items 
-
     gettotalItems = searchfunction(item)
     gettotalItems = makeJsonfile(totalItems)
     totalItems = gettotalItems['total_count']
 
+    # Scrap through data
     for currPos in range(0, totalItems + 50, 50):
         time.sleep(random.uniform(0.5, 2.5))
 
@@ -39,9 +41,11 @@ def formattedResult(item):
         
         getAllItems = requests.get(itemsUrl)
 
+        # Change to json format
         allItems = makeJsonfile(getAllItems)
         allItems = allItems['results']
 
+        # Append into dictionary
         for currItem in allItems:
             if currItem['asset_description']['tradable']:
                 itemName = currItem['name']
