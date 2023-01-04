@@ -29,7 +29,7 @@ def formattedResult(item):
     
     # Get total number of items 
     gettotalItems = searchfunction(item)
-    gettotalItems = makeJsonfile(totalItems)
+    totalItems = makeJsonfile(gettotalItems)
     totalItems = gettotalItems['total_count']
 
     # Scrap through data

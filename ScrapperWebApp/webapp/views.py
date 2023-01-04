@@ -15,8 +15,8 @@ def index(request):
             # Process the form data
             util.searchfunction(searchName)
             return redirect('searchResult?result=%s' % searchName)
-        else:
-            return render(request, "index.html")
+    else:
+        return render(request, "index.html")
 
 def searchResult(request):
     
