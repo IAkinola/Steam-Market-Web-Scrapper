@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{%load static %}
+{%block content%} 
+
+  <main class="px-3">
+    <h1>Steam Scrape.</h1>
+    <p class="lead">This project aims to allow users to search for an item on the Steam market, display the image, price and information about the item.</p>
+    <p class="lead">
+      <form class="col-auto mb-3 mb-lg-0 me-lg-3" role="search" action="{% url 'search_results' %}" method="get">
+        {% csrf_token %}
+        <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search" name="searchbar">
+        <button type="submit" class="btn btn-lg btn-light fw-bold border-white bg-white">Search</a>
+      </form>
+      
+    </p>
+  </main>
+
+{% endblock content%}
