@@ -1,14 +1,28 @@
-{% extends 'base.html'%}
-{% load render_table from django_tables2 %}
+{% extends 'base.html' %}
+{% load static %}
 
+{% block content %} 
+{% for item in search_list %}
 
-{%load static %}
-{%block content%} 
+<div class="card article col-11 m-3" >
+    <div class="row no-gutters">
+      <div class="col-md-8">
+        <div class="card-body text-left">
+            <h5 class=" card-title">
+              <strong> <a href="#" class="post_title"> {{item.itemName}} </a> </strong>
+            </h5>
+            <small class="text-muted"
+              >Posted by <a href="#"> {{item.gameName}} </a> on {{item.currentPrice}}  </small
+            >
+          </div>
 
-<p> 
-    {{ Searchtext }}
-</p>
-
-{% render_table table %}
-
-{% endblock content%}
+          <p class="card-text text-left ml-3">
+            {{ item }}
+          </p>
+          <p class="card-text">
+          </p>
+        </div>
+      </div>
+    </div>
+{% endfor %}
+{% endblock %}

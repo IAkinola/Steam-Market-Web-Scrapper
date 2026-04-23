@@ -16,12 +16,10 @@ import environ, os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-env = environ.Env(
-    DEBUG=(bool, False)
-)
+env = environ.Env()
 
 # Take environment variables from .env file
-environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+environ.Env.read_env()
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
@@ -31,7 +29,7 @@ SECRET_KEY = env('SECRET_KEY')
 
 DEBUG = env('DEBUG_MODE')
 
-ALLOWED_HOSTS = env('ALLOWED_HOSTS')
+# ALLOWED_HOSTS = env('ALLOWED_HOSTS')
 
 
 # Application definition
@@ -45,6 +43,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "webapp",
     "django_tables2",
+    "django_tailwind_cli",
 ]
 
 MIDDLEWARE = [

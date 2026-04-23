@@ -3,16 +3,15 @@
 {%block content%} 
 
   <main class="px-3">
-    <h1>Steam Scrape.</h1>
-    <p class="lead">This project aims to allow users to search for an item on the Steam market, display the image, price and information about the item.</p>
-    <p class="lead">
-      <form class="col-auto mb-3 mb-lg-0 me-lg-3" role="search" action="{% url 'search_results' %}" method="get">
+    <h1 class="font-bold text-7xl mb-4">Steam Market Notify</h1>
+    <p class="lead mb-4">This project aims to allow users to search for an item on the Steam market, display the image, price and information about the item.</p>
+
+      <form class="col-auto mb-3 mb-lg-0 me-lg-3" role="search" action="{% url 'search_results' %}" method="POST">
         {% csrf_token %}
-        <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search" name="searchbar">
-        <button type="submit" class="btn btn-lg btn-light fw-bold border-white bg-white">Search</a>
+        <input class="bg-white placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-1.5 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow" placeholder="Type here..." name="search_item"/>
+        <button type="submit" class="btn btn-lg btn-light fw-bold border-white bg-white text-black">Search</button>
       </form>
-      
-    </p>
+
   </main>
 
 {% endblock content%}
