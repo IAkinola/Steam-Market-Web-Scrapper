@@ -7,9 +7,9 @@
 <div class="card article col-11 m-3" >
     <div class="row no-gutters">
       <div class="col-md-8">
-        <div class="card-body text-left">
+        <div class="card-body text-left hover:bg-[#232833]">
             <h5 class=" card-title">
-              <strong> <a href="#" class="post_title"> {{item.itemName}} </a> </strong>
+              <strong> <a href="{% url 'item_details' item.itemName %}" class="post_title"> {{item.itemName}} </a> </strong>
             </h5>
             <small class="text-muted"
               >Posted by <a href="#"> {{item.gameName}} </a> on {{item.currentPrice}}  </small
@@ -23,6 +23,24 @@
           </p>
         </div>
       </div>
-    </div>
+</div>
 {% endfor %}
+
+<div class="pagination">
+        <span class="step-links">
+            {% if search_list.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ search_list.previous_page_number }}">previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ search_list.number }} of {{ search_list.paginator.num_pages }}.
+            </span>
+
+            {% if search_list.has_next %}
+                <a href="?page={{ search_list.next_page_number }}">next</a>
+                <a href="?page={{ search_list.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
+</div>
 {% endblock %}

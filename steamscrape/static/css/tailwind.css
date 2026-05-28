@@ -1,4 +1,4 @@
-/*! tailwindcss v4.2.4 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v4.3.0 | MIT License | https://tailwindcss.com */
 @layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
@@ -224,11 +224,14 @@
   .flex {
     display: flex;
   }
-  .table {
-    display: table;
+  .h-48 {
+    height: calc(var(--spacing) * 48);
   }
   .h-full {
     height: 100%;
+  }
+  .w-96 {
+    width: calc(var(--spacing) * 96);
   }
   .w-full {
     width: 100%;
@@ -335,6 +338,13 @@
     &:hover {
       @media (hover: hover) {
         border-color: var(--color-slate-300);
+      }
+    }
+  }
+  .hover\:bg-\[\#232833\] {
+    &:hover {
+      @media (hover: hover) {
+        background-color: #232833;
       }
     }
   }

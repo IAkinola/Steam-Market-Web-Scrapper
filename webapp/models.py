@@ -6,3 +6,4 @@ class ItemList(models.Model):
     gameName = models.CharField(max_length=20, default='test')
     itemName = models.CharField(max_length=20)
     currentPrice = models.DecimalField(max_digits=10, decimal_places=0)
+    itemUrl = models.CharField(max_length=150)
